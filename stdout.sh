@@ -1,11 +1,11 @@
 #!/bin/bash
-# Run Directory of shell scripts to stdout
-ls_res=$(ls $1/*.sh)
+argv=$0
+glob=$1
 
-file_list=($ls_res)
-
-echo "To Run: ${file_list[@]}"
-for i in "${file_list[@]}"
-do : 
-   ./$i
+for i in $*
+do :
+   if [ $argv != $i ]
+   then
+      ./$i
+   fi
 done
