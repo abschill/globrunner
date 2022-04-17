@@ -1,11 +1,19 @@
 #!/bin/bash
+oc="\e"
+cc="\e[0m"
 argv=$0
-glob=$1
+glob=$*
 
-for i in $*
+echo -e "$oc[1;33mGlob Files:$cc: $glob"
+
+for i in $glob
 do :
-   if [ $argv != $i ]
+   if [ $argv != $i ] && [ -x $i ]
+   echo "~~~~~~~~~~~~~~~"
+   echo -e "$oc[1;33mFile$cc: $i"
+   echo -e "$oc[1mOutput:$cc"
    then
-      ./$i
+      out=$(./$i)
+      echo -e "\e[1;32m$out\e[0m"
    fi
 done
