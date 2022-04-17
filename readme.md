@@ -1,3 +1,3 @@
 # Globrunner
 
-A simple copy-paste utility for running a glob of bash scripts from the given directory
+A simple copy-paste utility for running a glob of -xable files from the given directory and printing the output
