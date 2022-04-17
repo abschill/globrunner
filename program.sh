@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 oc="\e"
 cc="\e[0m"
 argv=$0
